@@ -9,7 +9,6 @@ export interface partialDataInterface {
     next?: string | null | undefined
     last?: string | null | undefined
   }
-  count: number
 }
 
 export const headers = {
@@ -57,10 +56,8 @@ export const charactersParserFromServer = ({
 })
 export const charactersParserFromState = ({
   characters,
-  links,
-  count
+  links
 }): partialDataInterface => ({
   characters,
-  links,
-  count
+  links
 })

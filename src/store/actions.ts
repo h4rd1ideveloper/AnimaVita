@@ -18,11 +18,11 @@ export const hydrate = (url: string) => (dispatch: Dispatch): void => {
   dispatch({ type: LOADING, _isLoading: true })
   fetch(url, headers)
     .then(response => response.json())
-    .then(({ data, meta: { count }, links }) => {
+    .then(({ data, links }) => {
       const characters: characterInterface[] = data
         .filter(charactersValid)
         .map(charactersParserFromServer)
-      dispatch({ type: INIT, characters, count, links })
+      dispatch({ type: INIT, characters, links })
     })
     .catch(console.log)
   setTimeout(() => isLoading(false)(dispatch), 800)

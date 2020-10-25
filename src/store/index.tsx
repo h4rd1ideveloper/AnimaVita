@@ -7,7 +7,7 @@ import storage from 'redux-persist/lib/storage'
 import thunkMiddleware from 'redux-thunk'
 import { partialDataInterface } from '../assets'
 
-import { INIT, isLoading, LOADING } from './actions'
+import { INIT, LOADING } from './actions'
 
 let store
 
@@ -24,14 +24,16 @@ export const initialState: initialStateInterface = {
     first: '',
     next: '',
     last: ''
-  },
-  count: 0
+  }
 }
 
 // REDUCERS
+interface ActionCustomProps extends Action {
+  _isLoading?: boolean | null | undefined
+}
 export const reducer = (
   state = initialState,
-  { type, ...payload }: Action
+  { type, ...payload }: ActionCustomProps
 ): initialStateInterface => {
   console.log(type, 'payload -', payload)
   switch (type) {
