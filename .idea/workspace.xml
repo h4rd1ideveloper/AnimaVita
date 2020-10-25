@@ -11,14 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c00dcb82-15e5-4fc9-b561-8712bdfd722b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hooks/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/_app.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_document.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/rocketseat.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/pages/Home.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/pages/Home.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/styled.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styled.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/theme.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="TypeScript JSX File" />
+        <option value="CSS File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -46,14 +51,22 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/styles" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\h4rd1\WebstormProjects\AnimaVita\node_modules\prettier" />
     <property name="ts.external.directory.path" value="C:\Users\h4rd1\WebstormProjects\AnimaVita\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\h4rd1\WebstormProjects\AnimaVita\src\styles" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\h4rd1\WebstormProjects\AnimaVita" />
     </key>
@@ -66,7 +79,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603461147702</updated>
-      <workItem from="1603461150358" duration="12093000" />
+      <workItem from="1603461150358" duration="13168000" />
+      <workItem from="1603626737177" duration="806000" />
+      <workItem from="1603629667700" duration="2119000" />
+      <workItem from="1603632105529" duration="2965000" />
+      <workItem from="1603635120645" duration="32000" />
+      <workItem from="1603635165627" duration="4581000" />
     </task>
     <servers />
   </component>
@@ -83,8 +101,23 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1603629422779">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603629422779" />
+    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1603634437962">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603634437962" />
+    <state x="187" y="13" width="905" height="777" key="find.popup" timestamp="1603634994202">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="187" y="13" width="905" height="777" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603634994202" />
   </component>
 </project>

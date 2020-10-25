@@ -5,12 +5,30 @@ import { ThemeProvider } from 'styled-components'
 import GlobalStyle from '../styles/global'
 import theme from '../styles/theme'
 
+import { useStore } from '../store'
+import { Provider } from 'react-redux'
+import { persistStore } from 'redux-persist'
+import { PersistGate } from 'redux-persist/integration/react'
+
+import style from '../styles/_app.module.css'
+
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+  const store = useStore(pageProps.initialReduxState)
+  const persistor = persistStore(store, {}, function() {
+    persistor.persist()
+  })
   return (
-    <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
-      <GlobalStyle />
-    </ThemeProvider>
+    <Provider store={store}>
+      <PersistGate
+        loading={<div className={style.spinner} />}
+        persistor={persistor}
+      >
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+          <GlobalStyle />
+        </ThemeProvider>
+      </PersistGate>
+    </Provider>
   )
 }
 
