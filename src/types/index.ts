@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-export type Anime = {
+export type characterInterface = {
   image_url: string
   description: string
   name: string

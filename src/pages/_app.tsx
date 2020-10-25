@@ -10,11 +10,11 @@ import { Provider } from 'react-redux'
 import { persistStore } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
 
-import style from '../styles/_app.module.css'
-
+import style from '../styles/style.module.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const store = useStore(pageProps.initialReduxState)
-  const persistor = persistStore(store, {}, function() {
+  const persistor = persistStore(store, {}, function persistCallback() {
     persistor.persist()
   })
   return (

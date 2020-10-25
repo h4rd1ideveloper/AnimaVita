@@ -1,22 +1,29 @@
 // ACTIONS
 import { Dispatch } from 'redux'
-import { animeParserFromServer, headers } from '../assets'
-import { Anime } from '../types'
+import { charactersParserFromServer, charactersValid, headers } from '../assets'
+import { characterInterface } from '../types'
 
 const actionTypes = {
   INIT: 'hydrate',
   LOADING: 'LOADING'
 }
 export const { INIT, LOADING } = actionTypes
-export const isLoading = (flag: boolean) => (dispatch: Dispatch): void => {
-  dispatch({ type: LOADING, flag })
+export const isLoading = (_isLoading: boolean) => (
+  dispatch: Dispatch
+): void => {
+  dispatch({ type: LOADING, _isLoading })
 }
 export const hydrate = (url: string) => (dispatch: Dispatch): void => {
+  isLoading(true)(dispatch)
+  dispatch({ type: LOADING, _isLoading: true })
   fetch(url, headers)
     .then(response => response.json())
     .then(({ data, meta: { count }, links }) => {
-      const animes: Anime[] = data.map(animeParserFromServer)
-      dispatch({ type: INIT, animes, count, links })
+      const characters: characterInterface[] = data
+        .filter(charactersValid)
+        .map(charactersParserFromServer)
+      dispatch({ type: INIT, characters, count, links })
     })
     .catch(console.log)
+  setTimeout(() => isLoading(false)(dispatch), 800)
 }

@@ -7,7 +7,7 @@ import storage from 'redux-persist/lib/storage'
 import thunkMiddleware from 'redux-thunk'
 import { partialDataInterface } from '../assets'
 
-import { INIT, LOADING } from './actions'
+import { INIT, isLoading, LOADING } from './actions'
 
 let store
 
@@ -19,7 +19,7 @@ export interface initialStateInterface extends partialDataInterface {
 export const initialState: initialStateInterface = {
   _persist: null,
   _isLoading: true,
-  animes: [],
+  characters: [],
   links: {
     first: '',
     next: '',
@@ -33,7 +33,7 @@ export const reducer = (
   state = initialState,
   { type, ...payload }: Action
 ): initialStateInterface => {
-  console.log({ type }, payload)
+  console.log(type, 'payload -', payload)
   switch (type) {
     case INIT:
       return {
@@ -43,7 +43,7 @@ export const reducer = (
     case LOADING:
       return {
         ...state,
-        _isLoading: Boolean(payload)
+        _isLoading: Boolean(payload?._isLoading)
       }
     default:
       return state
@@ -51,7 +51,7 @@ export const reducer = (
 }
 
 const persistConfig = {
-  key: 'primary',
+  key: 'store',
   storage,
   blacklist: []
 }

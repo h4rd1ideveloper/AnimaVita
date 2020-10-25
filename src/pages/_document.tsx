@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Document, {
   DocumentInitialProps,
   DocumentContext,
@@ -46,8 +47,8 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Roboto:400,500,700"
             rel="stylesheet"
           />
-          <meta charSet="UTF-8"/>
-          <meta httpEquiv="X-UA-Compatible" content="ie=edge"/>
+          <meta charSet="UTF-8" />
+          <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         </Head>
         <body>
           <Main />

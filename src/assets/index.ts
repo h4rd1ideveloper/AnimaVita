@@ -1,39 +1,66 @@
 /* eslint-disable camelcase,@typescript-eslint/explicit-module-boundary-types */
-import { Anime } from '../types'
+import { characterInterface } from '../types'
+
 export interface partialDataInterface {
-  animes: Anime[]
+  characters: characterInterface[]
   links: {
-    first: string
-    next: string
-    last: string
+    first?: string | null | undefined
+    prev?: string | null | undefined
+    next?: string | null | undefined
+    last?: string | null | undefined
   }
   count: number
 }
+
 export const headers = {
   headers: {
     Accept: 'application/vnd.api+json',
     'Content-Type': 'application/vnd.api+json'
   }
 }
-export const animeParserFromServer = ({
+export const charactersValid = ({ attributes }) => {
+  console.log(
+    attributes,
+    !!(
+      attributes &&
+      attributes?.description &&
+      attributes?.name &&
+      attributes?.names &&
+      attributes?.names?.ja_jp &&
+      attributes?.image &&
+      attributes?.image?.original
+    )
+  )
+  return !!(
+    attributes &&
+    attributes?.description &&
+    attributes?.name &&
+    attributes?.names &&
+    attributes?.names?.ja_jp &&
+    attributes?.image &&
+    attributes?.image?.original
+  )
+}
+
+export const charactersParserFromServer = ({
   attributes: {
     image: { original: image_url },
     description,
     name,
     names: { ja_jp: name_jp }
   }
-}): Anime => ({
+}): characterInterface => ({
   image_url,
   description,
   name,
   name_jp
 })
-export const animeParserFromState = ({
-  animes,
+export const charactersParserFromState = ({
+  characters,
   links,
   count
 }): partialDataInterface => ({
-  animes,
+  characters,
   links,
   count
 })
